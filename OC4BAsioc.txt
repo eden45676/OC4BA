@@ -991,7 +991,7 @@ Var 2601, name sRECIRC_FAN_R, static, Link IOCARD_SW, Device 30, Input 141
 
 Var 2676, name sRETRACTABLE_L, static
 
-Var 0700, name temp_rectL, Link IOCARD_SW, Device 30, Input 0
+Var 0700, name temp_rectL, Link IOCARD_SW, Device 34, Input 90
 {
   IF &temp_rectL = 0
   {
@@ -1005,7 +1005,7 @@ Var 0700, name temp_rectL, Link IOCARD_SW, Device 30, Input 0
 
 Var 2682, name sRETRACTABLE_R, static
 
-Var 0701, name temp_rectR, Link IOCARD_SW, Device 30, Input 1
+Var 0701, name temp_rectR, Link IOCARD_SW, Device 34, Input 91
 {
   IF &temp_rectR = 0
   {
@@ -1017,23 +1017,23 @@ Var 0701, name temp_rectR, Link IOCARD_SW, Device 30, Input 1
   }
 }
 
-Var 2674, name sFIXED_L, static, Link IOCARD_SW, Device 30, Input 2
+Var 2674, name sFIXED_L, static, Link IOCARD_SW, Device 34, Input 92
 
-Var 2680, name sFIXED_R, static, Link IOCARD_SW, Device 30, Input 3
+Var 2680, name sFIXED_R, static, Link IOCARD_SW, Device 34, Input 93
 
-Var 2677, name sRUNWAY_TO_L, static, Link IOCARD_SW, Device 30, Input 4
+Var 2677, name sRUNWAY_TO_L, static, Link IOCARD_SW, Device 34, Input 94
 
-Var 2683, name sRUNWAY_TO_R, static, Link IOCARD_SW, Device 30, Input 5
+Var 2683, name sRUNWAY_TO_R, static, Link IOCARD_SW, Device 34, Input 95
 
-Var 2684, name sTAXI, static, Link IOCARD_SW, Device 30, Input 6
+Var 2684, name sTAXI, static, Link IOCARD_SW, Device 34, Input 96
 
-Var 2678, name sLOGO, static, Link IOCARD_SW, Device 30, Input 18
+Var 2678, name sLOGO, static, Link IOCARD_SW, Device 34, Input 73
 
-Var 2670, name sANTI_COL, static, Link IOCARD_SW, Device 30, Input 21
+Var 2670, name sANTI_COL, static, Link IOCARD_SW, Device 34, Input 76
 
-Var 2686, name sWING, static, Link IOCARD_SW, Device 30, Input 22
+Var 2686, name sWING, static, Link IOCARD_SW, Device 34, Input 77
 
-Var 2685, name sWHEEL_WELL, static, Link IOCARD_SW, Device 30, Input 23
+Var 2685, name sWHEEL_WELL, static, Link IOCARD_SW, Device 34, Input 78
 
 Var 2604, name CB_LIGHT_C, static
 
@@ -2042,13 +2042,13 @@ Var 1191, name aBleedTripOff0, static, Link IOCARD_DISPLAY, Device 30, Digit 53,
 
 Var 1192, name aBleedTripOff1, static, Link IOCARD_DISPLAY, Device 30, Digit 54, Numbers 1
 
-Var 1712, name aAUTO_FAIL, static, Link IOCARD_OUT, Device 30, Output 98
+Var 1712, name aAUTO_FAIL, static, Link IOCARD_OUT, Device 34, Output 78
 
-Var 1713, name aOFF_SD, static, Link IOCARD_OUT, Device 30, Output 99
+Var 1713, name aOFF_SD, static, Link IOCARD_OUT, Device 34, Output 77
 
-Var 1714, name aALTN, static, Link IOCARD_OUT, Device 30, Output 100
+Var 1714, name aALTN, static, Link IOCARD_OUT, Device 34, Output 76
 
-Var 1715, name aMANUAL, static, Link IOCARD_OUT, Device 30, Output 101
+Var 1715, name aMANUAL, static, Link IOCARD_OUT, Device 34, Output 75
 
 Var 1196, name FltAltWindow, static
 {
@@ -2216,7 +2216,7 @@ Var 0118, name LA5, Link IOCARD_DISPLAY, Device 30, Digit 73, Numbers 1
 
 Var 2703, name PRESS_V_SW, static
 
-Var 0119, name sCLOSE_VALVE, Link IOCARD_SW, Device 30, Input 134
+Var 0119, name sCLOSE_VALVE, Link IOCARD_SW, Device 34, Input 107
 {
   IF &sCLOSE_VALVE = 1
   {
@@ -2231,7 +2231,7 @@ Var 0119, name sCLOSE_VALVE, Link IOCARD_SW, Device 30, Input 134
   }
 }
 
-Var 0120, name sOPEN_VALVE, Link IOCARD_SW, Device 30, Input 133
+Var 0120, name sOPEN_VALVE, Link IOCARD_SW, Device 34, Input 106
 {
   IF &sOPEN_VALVE = 1
   {
@@ -2248,23 +2248,27 @@ Var 0120, name sOPEN_VALVE, Link IOCARD_SW, Device 30, Input 133
 
 Var 2702, name PRESS_SEL, static
 
-Var 0121, name sC_MODE_AUTO, Link IOCARD_SW, Device 30, Input 130
-{
-  IF &sC_MODE_AUTO = 1
-  {
-    &PRESS_SEL = 0    
-  }
-}
+//Var 0121, name sC_MODE_AUTO, Link IOCARD_SW, Device 34, Input 130
+//{
+//  IF &sC_MODE_AUTO = 1
+//  {
+//    &PRESS_SEL = 0    
+//  }
+//}
 
-Var 0122, name sC_MODE_ALTN, Link IOCARD_SW, Device 30, Input 131
+Var 0122, name sC_MODE_ALTN, Link IOCARD_SW, Device 34, Input 79
 {
   IF &sC_MODE_ALTN = 1
   {
     &PRESS_SEL = 1    
   }
+  ELSE
+  {
+    &PRESS_SEL = 0
+  }
 }
 
-Var 0123, name sC_MODE_MAN, Link IOCARD_SW, Device 30, Input 132
+Var 0123, name sC_MODE_MAN, Link IOCARD_SW, Device 34, Input 80
 {
   IF &sC_MODE_MAN = 1
   {
@@ -2274,7 +2278,7 @@ Var 0123, name sC_MODE_MAN, Link IOCARD_SW, Device 30, Input 132
 
 Var 2671, name APU_START_SW, static
 
-Var 0124, name sAPU_OFF, Link IOCARD_SW, Device 30, Input 7
+Var 0124, name sAPU_OFF, Link IOCARD_SW, Device 34, Input 98
 {
   IF &sAPU_OFF = 1
   {
@@ -2289,7 +2293,7 @@ Var 0124, name sAPU_OFF, Link IOCARD_SW, Device 30, Input 7
   }
 }
 
-Var 0125, name sAPU_START, Link IOCARD_SW, Device 30, Input 8
+Var 0125, name sAPU_START, Link IOCARD_SW, Device 34, Input 97
 {
   IF &sAPU_START = 1
   {
