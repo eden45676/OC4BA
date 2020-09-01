@@ -1067,6 +1067,30 @@ Var 2672, name LI_C, static
 
 Var 2689, name NAVFMC_SEL, static
 
+Var 0640, name sFMC_1, Link IOCARD_SW, Device 34, Input 167
+{
+  IF &sFMC_1 = 1
+  {
+    &NAVFMC_SEL = 0    
+  }
+  ELSE
+  {
+    &NAVFMC_SEL = 1    
+  }
+}
+
+Var 0641, name sFMC_2, Link IOCARD_SW, Device 34, Input 168
+{
+  IF &sFMC_2 = 1
+  {
+    &NAVFMC_SEL = 2    
+  }
+  ELSE
+  {
+    &NAVFMC_SEL = 1    
+  }
+}
+
 Var 2695, name OXY_RED_B_L, static
 
 Var 2696, name OXY_RED_B_R, static
@@ -1357,33 +1381,36 @@ Var 0059, name sCONTROL_P_2, Link IOCARD_SW, Device 34, Input 170
   }
 }
 
-Var 1067, name aENG_VA_CL_L, static, Link IOCARD_DISPLAY, Device 30, Digit 32, Numbers 1
+//Var 1067, name aENG_VA_CL_L, static, Link IOCARD_DISPLAY, Device 30, Digit 32, Numbers 1
+Var 1067, name aENG_VA_CL_L, static, Link IOCARD_OUT, Device 34, Output 170
 
-Var 1068, name aENG_VA_CL_R, static, Link IOCARD_DISPLAY, Device 30, Digit 34, Numbers 1
+//Var 1068, name aENG_VA_CL_R, static, Link IOCARD_DISPLAY, Device 30, Digit 34, Numbers 1
+Var 1068, name aENG_VA_CL_R, static, Link IOCARD_OUT, Device 34, Output 168
 
-Var 1069, name aSPAR_VA_CL_1, static, Link IOCARD_DISPLAY, Device 30, Digit 33, Numbers 1
+//Var 1069, name aSPAR_VA_CL_1, static, Link IOCARD_DISPLAY, Device 30, Digit 33, Numbers 1
+Var 1069, name aSPAR_VA_CL_1, static, Link IOCARD_OUT, Device 34, Output 169
 
-Var 1070, name aSPAR_VA_CL_2, static, Link IOCARD_DISPLAY, Device 30, Digit 35, Numbers 1
+//Var 1070, name aSPAR_VA_CL_2, static, Link IOCARD_DISPLAY, Device 30, Digit 35, Numbers 1
+Var 1070, name aSPAR_VA_CL_2, static, Link IOCARD_OUT, Device 34, Output 167
 
-Var 1071, name aFILT_BYPASS_L, static, Link IOCARD_OUT, Device 30, Output 20
+Var 1071, name aFILT_BYPASS_L, static, Link IOCARD_OUT, Device 34, Output 112
 
-//Var 1072, name aFILT_BYPASS_R, static, Link IOCARD_OUT, Device 30, Output 21
 Var 1072, name aFILT_BYPASS_R, static, Link IOCARD_OUT, Device 34, Output 110
 
 //Var 1073, name aXFEED_VA_O, static, Link IOCARD_DISPLAY, Device 30, Digit 36, Numbers 1
 Var 1073, name aXFEED_VA_O, static, Link IOCARD_OUT, Device 34, Output 111
 
-Var 1074, name aLOWPR_Fwd_L, static, Link IOCARD_OUT, Device 30, Output 25
+Var 1074, name aLOWPR_Fwd_L, static, Link IOCARD_OUT, Device 34, Output 175
 
-Var 1075, name aLOWPR_Fwd_R, static, Link IOCARD_OUT, Device 30, Output 26
+Var 1075, name aLOWPR_Fwd_R, static, Link IOCARD_OUT, Device 34, Output 172
 
-Var 1076, name aLOWPR_Aft_L, static, Link IOCARD_OUT, Device 30, Output 24
+Var 1076, name aLOWPR_Aft_L, static, Link IOCARD_OUT, Device 34, Output 176
 
-Var 1077, name aLOWPR_Aft_R, static, Link IOCARD_OUT, Device 30, Output 27
+Var 1077, name aLOWPR_Aft_R, static, Link IOCARD_OUT, Device 34, Output 171
 
-Var 1078, name aLOWPR_Ctr_L, static, Link IOCARD_OUT, Device 30, Output 22
+Var 1078, name aLOWPR_Ctr_L, static, Link IOCARD_OUT, Device 34, Output 174
 
-Var 1079, name aLOWPR_Ctr_R, static, Link IOCARD_OUT, Device 30, Output 23
+Var 1079, name aLOWPR_Ctr_R, static, Link IOCARD_OUT, Device 34, Output 173
 
 Var 2645, name FUEL_CRFeed, static, Value 0
 
@@ -1731,11 +1758,14 @@ Var 0086, name sAPU_GEN_ON_R, Link IOCARD_SW, Device 34, Input 138
   }
 }
 
-Var 1112, name aAPU_MAINT, static, Link IOCARD_DISPLAY, Device 30, Digit 41, Numbers 1
+//Var 1112, name aAPU_MAINT, static, Link IOCARD_DISPLAY, Device 30, Digit 41, Numbers 1
+Var 1112, name aAPU_MAINT, static, Link IOCARD_OUT, Device 34, Output 103
 
-Var 1113, name aAPU_LOW_OIL, static, Link IOCARD_DISPLAY, Device 30, Digit 42, Numbers 1
+//Var 1113, name aAPU_LOW_OIL, static, Link IOCARD_DISPLAY, Device 30, Digit 42, Numbers 1
+Var 1113, name aAPU_LOW_OIL, static, Link IOCARD_OUT, Device 34, Output 101
 
-Var 1114, name aAPU_FAULT, static, Link IOCARD_DISPLAY, Device 30, Digit 43, Numbers 1
+//Var 1114, name aAPU_FAULT, static, Link IOCARD_DISPLAY, Device 30, Digit 43, Numbers 1
+Var 1114, name aAPU_FAULT, static, Link IOCARD_OUT, Device 34, Output 100
 
 //Var 1115, name aAPU_OVERSP, static, Link IOCARD_DISPLAY, Device 30, Digit 44, Numbers 1
 Var 1115, name aAPU_OVERSP, static, Link IOCARD_OUT, Device 34, Output 99
@@ -1864,7 +1894,8 @@ Var 0094, name sFAST_SEAT_ON, Link IOCARD_SW, Device 34, Input 129
   }
 }
 
-Var 1128, name aCALL, static, Link IOCARD_DISPLAY, Device 30, Digit 45, Numbers 1
+//Var 1128, name aCALL, static, Link IOCARD_DISPLAY, Device 30, Digit 45, Numbers 1
+Var 1128, name aCALL, static, Link IOCARD_OUT, Device 34, Output 85
 
 Var 1129, name aPA_IN_USE, static, Link IOCARD_OUT, Device 30, Output 18
 
@@ -2066,17 +2097,23 @@ Var 0102, name sPACK_HI_R, Link IOCARD_SW, Device 34, Input 115
 
 //All display here should set as ouput
 
-Var 1187, name aPackTripOff0, static, Link IOCARD_DISPLAY, Device 30, Digit 49, Numbers 1
+//Var 1187, name aPackTripOff0, static, Link IOCARD_DISPLAY, Device 30, Digit 49, Numbers 1
+Var 1187, name aPackTripOff0, static, Link IOCARD_OUT, Device 34, Output 84
 
-Var 1188, name aPackTripOff1, static, Link IOCARD_DISPLAY, Device 30, Digit 50, Numbers 1
+//Var 1188, name aPackTripOff1, static, Link IOCARD_DISPLAY, Device 30, Digit 50, Numbers 1
+Var 1188, name aPackTripOff1, static, Link IOCARD_OUT, Device 34, Output 81
 
-Var 1189, name aWiBodyOheat0, static, Link IOCARD_DISPLAY, Device 34, Digit 51, Numbers 1
+//Var 1189, name aWiBodyOheat0, static, Link IOCARD_DISPLAY, Device 34, Digit 51, Numbers 1
+Var 1189, name aWiBodyOheat0, static, Link IOCARD_OUT, Device 34, Output 83
 
-Var 1190, name aWiBodyOheat1, static, Link IOCARD_DISPLAY, Device 30, Digit 52, Numbers 1
+//Var 1190, name aWiBodyOheat1, static, Link IOCARD_DISPLAY, Device 30, Digit 52, Numbers 1
+Var 1190, name aWiBodyOheat1, static, Link IOCARD_OUT, Device 34, Output 80
 
-Var 1191, name aBleedTripOff0, static, Link IOCARD_DISPLAY, Device 30, Digit 53, Numbers 1
+//Var 1191, name aBleedTripOff0, static, Link IOCARD_DISPLAY, Device 30, Digit 53, Numbers 1
+Var 1191, name aBleedTripOff0, static, Link IOCARD_OUT, Device 34, Output 82
 
-Var 1192, name aBleedTripOff1, static, Link IOCARD_DISPLAY, Device 30, Digit 54, Numbers 1
+//Var 1192, name aBleedTripOff1, static, Link IOCARD_DISPLAY, Device 30, Digit 54, Numbers 1
+Var 1192, name aBleedTripOff1, static, Link IOCARD_OUT, Device 34, Output 79
 
 Var 1712, name aAUTO_FAIL, static, Link IOCARD_OUT, Device 34, Output 78
 
