@@ -903,7 +903,7 @@ Var 0039, name sSTBY_PWR_R, Link IOCARD_SW, Device 34, Input 166     // Stby Pwr
 
 Var 2631, name EL_GRD_PWR_SW, static
 
-Var 0040, name sGND_PWR_OFF, Link IOCARD_SW, Device 30, Input 64     // Gnd Pwr Off SW
+Var 0040, name sGND_PWR_OFF, Link IOCARD_SW, Device 34, Input 133     // Gnd Pwr Off SW
 {
   IF &sGND_PWR_OFF = 1
   {
@@ -918,7 +918,7 @@ Var 0040, name sGND_PWR_OFF, Link IOCARD_SW, Device 30, Input 64     // Gnd Pwr 
   }
 }
 
-Var 0041, name sGND_PWR_ON, Link IOCARD_SW, Device 30, Input 65     // Gnd Pwr On SW
+Var 0041, name sGND_PWR_ON, Link IOCARD_SW, Device 34, Input 134    // Gnd Pwr On SW
 {
   IF &sGND_PWR_ON = 1
   {
@@ -1129,7 +1129,7 @@ Var 2639, name FCTL_A_G, static
 
 Var 2640, name FCTL_A_SW, static, Value 1
 
-Var 0042, name sFCTL_SR_A, Link IOCARD_SW, Device 30, Input 47
+Var 0042, name sFCTL_SR_A, Link IOCARD_SW, Device 34, Input 186
 {
   IF &sFCTL_SR_A = 1
   {
@@ -1143,7 +1143,7 @@ Var 0042, name sFCTL_SR_A, Link IOCARD_SW, Device 30, Input 47
   }
 }
 
-Var 0043, name sFCTL_A_ON, Link IOCARD_SW, Device 30, Input 48
+Var 0043, name sFCTL_A_ON, Link IOCARD_SW, Device 34, Input 185
 {
   IF &sFCTL_A_ON = 1
   {
@@ -1161,7 +1161,7 @@ Var 2641, name FCTL_B_G, static
 
 Var 2642, name FCTL_B_SW, static, Value 1
 
-Var 0044, name sFCTL_SR_B, Link IOCARD_SW, Device 30, Input 49
+Var 0044, name sFCTL_SR_B, Link IOCARD_SW, Device 34, Input 183
 {
   IF &sFCTL_SR_B = 1
   {
@@ -1175,7 +1175,7 @@ Var 0044, name sFCTL_SR_B, Link IOCARD_SW, Device 30, Input 49
   }
 }
 
-Var 0045, name sFCTL_B_ON, Link IOCARD_SW, Device 30, Input 50
+Var 0045, name sFCTL_B_ON, Link IOCARD_SW, Device 34, Input 184
 {
   IF &sFCTL_B_ON = 1
   {
@@ -1193,7 +1193,7 @@ Var 2589, name ALT_FLAPS_G, static
 
 Var 2590, name ALT_FLAPS, static
 
-Var 0046, name sALT_FLAPS_ARM, Link IOCARD_SW, Device 30, Input 51
+Var 0046, name sALT_FLAPS_ARM, Link IOCARD_SW, Device 34, Input 182
 {
   IF &sALT_FLAPS_ARM = 1
   {
@@ -1209,7 +1209,7 @@ Var 0046, name sALT_FLAPS_ARM, Link IOCARD_SW, Device 30, Input 51
 
 Var 2591, name ALT_FLAPS_SW, static
 
-Var 0047, name sALT_FLAPS_UP, Link IOCARD_SW, Device 30, Input 52
+Var 0047, name sALT_FLAPS_UP, Link IOCARD_SW, Device 34, Input 188
 {
   IF &sALT_FLAPS_UP = 1
   {
@@ -1221,15 +1221,15 @@ Var 0047, name sALT_FLAPS_UP, Link IOCARD_SW, Device 30, Input 52
   }
 }
 
-Var 0048, name sALT_FLAPS_DN, Link IOCARD_SW, Device 30, Input 53
+Var 0048, name sALT_FLAPS_DN, Link IOCARD_SW, Device 34, Input 187
 {
   IF &sALT_FLAPS_DN = 1
   {
-    &ALT_FLAPS_SW = 1    
+    &ALT_FLAPS_SW = 2    
   }
   ELSE
   {
-    &ALT_FLAPS_SW = 2    
+    &ALT_FLAPS_SW = 1    
   }
 }
 
@@ -1237,7 +1237,7 @@ Var 2705, name SPOILER_A_G, static
 
 Var 2706, name SPOILER_A_SW, static, Value 1
 
-Var 0049, name sSPOILER_A_OFF, Link IOCARD_SW, Device 30, Input 45
+Var 0049, name sSPOILER_A_OFF, Link IOCARD_SW, Device 34, Input 180
 {
   IF &sSPOILER_A_OFF = 1
   {
@@ -1255,7 +1255,7 @@ Var 2707, name SPOILER_B_G, static
 
 Var 2708, name SPOILER_B_SW, static, Value 1
 
-Var 0050, name sSPOILER_B_OFF, Link IOCARD_SW, Device 30, Input 46
+Var 0050, name sSPOILER_B_OFF, Link IOCARD_SW, Device 34, Input 181
 {
   IF &sSPOILER_B_OFF = 1
   {
@@ -3355,7 +3355,7 @@ Var 1024, name TXRX_OXY, static
 
 Var 2607, name DOME_WHITE_SW, static, Value 0
 
-Var 0205, name sDW_DIM, Link IOCARD_SW, Device 33, Input 93
+Var 0205, name sDW_DIM, Link IOCARD_SW, Device 34, Input 196
 {
   IF &sDW_DIM = 1
   {
@@ -3372,7 +3372,7 @@ Var 0205, name sDW_DIM, Link IOCARD_SW, Device 33, Input 93
 
 Var 2704, name Service_Phone, static, Link IOCARD_SW, Device 33, Input 86
 
-Var 0207, name sDW_BRIGHT, Link IOCARD_SW, Device 33, Input 94
+Var 0207, name sDW_BRIGHT, Link IOCARD_SW, Device 34, Input 197
 {
   IF &sDW_BRIGHT = 1
   {
