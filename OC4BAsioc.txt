@@ -935,7 +935,7 @@ Var 0041, name sGND_PWR_ON, Link IOCARD_SW, Device 34, Input 134    // Gnd Pwr O
 
 Var 1094, name aGND_PWR_LED, static, Link IOCARD_DISPLAY, Device 30, Digit 37, Numbers 1
 
-Var 2633, name bEL_MAINT, static, Link IOCARD_SW, Device 30, Input 89
+Var 2633, name bEL_MAINT, static, Link IOCARD_SW, Device 34, Input 192
 
 Var 2592, name bATTEND, static, Link IOCARD_SW, Device 30, Input 99
 
@@ -957,11 +957,11 @@ Var 2717, name sYAW_DAMPER, static, Link IOCARD_SW, Device 34, Input 175
 
 Var 2622, name sEL_CAB_UT, static, Link IOCARD_SW, Device 30, Input 81
 
-Var 2628, name sEL_GALLEY, static, Link IOCARD_SW, Device 30, Input 81
+Var 2628, name sEL_GALLEY, static, Link IOCARD_SW, Device 34, Input 193
 
-Var 2609, name sEC_SUPPLY, static, Link IOCARD_SW, Device 30, Input 97
+Var 2609, name sEC_SUPPLY, static, Link IOCARD_SW, Device 34, Input 164
 
-Var 2608, name sEC_EXHAUST, static, Link IOCARD_SW, Device 30, Input 98
+Var 2608, name sEC_EXHAUST, static, Link IOCARD_SW, Device 34, Input 163
 
 Var 2662, name sWINDOW_HEAT_1, static, Link IOCARD_SW, Device 34, Input 146
 
@@ -2431,9 +2431,13 @@ Var 0129, name sENG1_S_CONT, Link IOCARD_SW, Device 34, Input 87     // Eng Star
   {
     &ENGINE1_SW = 2    
   }
+  ELSE
+  {
+    &ENGINE1_SW = 3
+  }      
 }
 
-Var 0130, name sENG1_S_FLT, Link IOCARD_SW, Device 34, Input 88     // Eng Start 1 Flt ROT
+Var 0130, name sENG1_S_FLT, Link IOCARD_SW, Device 30, Input 88     // Eng Start 1 Flt ROT
 {
   IF &sENG1_S_FLT = 1
   {
@@ -2504,7 +2508,7 @@ Var 1221, name ENG2_ST_SW_POS, static
 
 Var 2681, name ENGINE2_SW, static
 
-Var 0134, name sENG2_S_GRD, Link IOCARD_SW, Device 30, Input 13     // Eng Start 2 Grd ROT
+Var 0134, name sENG2_S_GRD, Link IOCARD_SW, Device 34, Input 81     // Eng Start 2 Grd ROT
 {
   IF &sENG2_S_GRD = 1
   {
@@ -2512,7 +2516,7 @@ Var 0134, name sENG2_S_GRD, Link IOCARD_SW, Device 30, Input 13     // Eng Start
   }
 }
 
-Var 0135, name sENG2_S_OFF, Link IOCARD_SW, Device 30, Input 14     // Eng Start 2 Off ROT
+Var 0135, name sENG2_S_OFF, Link IOCARD_SW, Device 34, Input 82     // Eng Start 2 Off ROT
 {
   IF &sENG2_S_OFF = 1
   {
@@ -2520,11 +2524,15 @@ Var 0135, name sENG2_S_OFF, Link IOCARD_SW, Device 30, Input 14     // Eng Start
   }
 }
 
-Var 0136, name ENG2_S_CONT, Link IOCARD_SW, Device 30, Input 15     // Eng Start 2 Cont ROT
+Var 0136, name ENG2_S_CONT, Link IOCARD_SW, Device 34, Input 83     // Eng Start 2 Cont ROT
 {
   IF &ENG2_S_CONT = 1
   {
     &ENGINE2_SW = 2    
+  }
+  ELSE
+  {
+    &ENGINE2_SW = 3    
   }
 }
 
@@ -5193,14 +5201,15 @@ Var 2579, name NOSE_WHEEL_G, static
 
 Var 2578, name NOSE_WHEEL_SW, static
 
-Var 0375, name sNOSE_WH_S, Link IOCARD_SW, Device 31, Input 66
+//Var 0375, name sNOSE_WH_S, Link IOCARD_SW, Device 31, Input 66
+Var 0375, name sNOSE_WH_S, Link USB_ANALOGIC, Device 34, Input 2, PosL 0, PosC 60, PosR 134
 {
-  IF &sNOSE_WH_S = 0
+  IF &sNOSE_WH_S < 60 
   {
     &NOSE_WHEEL_G = 0    
     &NOSE_WHEEL_SW = 1    
   }
-  ELSE
+  IF &sNOSE_WH_S > 60 
   {
     &NOSE_WHEEL_G = 1    
     &NOSE_WHEEL_SW = 0    
